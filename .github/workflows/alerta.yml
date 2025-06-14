@@ -15,4 +15,4 @@ jobs:
 
     - name: Enviar notificación a ntfy.sh
       run: |
-        curl -d "Nuevo código subido a la rama main por $GITHUB_ACTOR" ntfy.sh/devops-itla
+        curl -d "Nuevo código subido a la rama main por ${{ github.repository }}" ntfy.sh/devops-itla
