@@ -1,0 +1,18 @@
+name: Notificación en ntfy.sh
+
+on:
+   push:
+     branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout del repositorio
+      uses: actions/checkout@v3
+
+    - name: Enviar notificación a ntfy.sh
+      run: |
+        curl -d "Nuevo código subido a la rama main por $GITHUB_ACTOR" ntfy.sh/devops-itla
